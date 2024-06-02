@@ -4,6 +4,7 @@ using FormulaOne.Application.Dtos.Driver.Requests;
 using FormulaOne.Application.Dtos.Driver.Responses;
 using FormulaOne.Domain.Entities;
 using FormulaOne.Domain.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -12,8 +13,8 @@ namespace FormulaOne.Api.Controllers;
 
 public class AchievementsController : BaseController
 {
-    public AchievementsController(IUnitOfWork unitOfWork, IMapper mapper) 
-        : base(unitOfWork, mapper)
+    public AchievementsController(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator) 
+        : base(unitOfWork, mapper, mediator)
     {
     }
 

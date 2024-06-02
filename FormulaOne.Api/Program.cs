@@ -36,6 +36,10 @@ namespace FormulaOne.Api
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            builder.Services.AddMediatR(cfg =>
+                cfg.RegisterServicesFromAssemblies(applicationAssembly)
+            );
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
